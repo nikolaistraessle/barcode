@@ -38,8 +38,8 @@ import "C"
 // Version returns the major and minor version numbers of the
 // underlying zbar library.
 func Version() (major, minor uint) {
-	var raw_major, raw_minor C.uint
-	C.zbar_version(&raw_major, &raw_minor)
+	var raw_major, raw_minor, raw_patch C.uint
+	C.zbar_version(&raw_major, &raw_minor, &raw_patch)
 	return uint(raw_major), uint(raw_minor)
 }
 
